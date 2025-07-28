@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "scripts": {
+    "logging-hook": "tsx logging-hook.ts",
+    "format-on-post-tool": "tsx format-on-post-tool.ts",
+    "reject-jest-and-prefer-vitest": "tsx reject-jest-and-prefer-vitest.ts"
+  },
+  "dependencies": {
+    "@mizunashi-mana/claude-code-hook-sdk": "^1.0.0",
+    "tsx": "^4.20.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

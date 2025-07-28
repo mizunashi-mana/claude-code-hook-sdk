@@ -1,7 +1,8 @@
 import { buildContainer } from '@/container/buildContainer';
 import { Tags } from '@/container/Tags';
+import { type HookHandler } from '@/resource/HookHandler';
 import { type HookOutput } from '@/resource/HookOutput';
-import { type HookHandlerService, type HookHandler } from '@/service/HookHandlerService';
+import { type HookHandlerService } from '@/service/HookHandlerService';
 
 export async function runHookCaller(hook: HookHandler, props: { input: string }): Promise<{ output: HookOutput | undefined; exitCode: 'success' | 'failure' | 'block' }> {
   const container = buildContainer();

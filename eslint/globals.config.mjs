@@ -18,10 +18,19 @@ export default defineConfig([
     },
   },
   {
-    files: ['**/*.{ts,tsx}', '.*/**/*.{ts,tsx}'],
+    files: ['{src,test}/**/*.{ts,tsx}', '.*/**/*.{ts,tsx}', '*.ts'],
     languageOptions: {
       parserOptions: {
         projectService: true,
+      },
+    },
+  },
+  {
+    files: ['example/**/*.{ts,tsx}'],
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: './example',
       },
     },
   },

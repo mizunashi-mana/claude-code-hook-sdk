@@ -1,5 +1,5 @@
 import { runHookCaller } from '@/api/runHookCaller';
-import { type HookHandler } from '@/service/HookHandlerService';
+import { type HookHandler } from '@/resource/HookHandler';
 
 export async function runHook(handler: HookHandler): Promise<void> {
   let input = '';

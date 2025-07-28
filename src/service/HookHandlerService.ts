@@ -1,17 +1,10 @@
 import { inject, injectable } from 'inversify';
 import { parseHookInput } from '@/api/parseHookInput';
 import { Tags } from '@/container/Tags';
-import { isKnownHookInput, NotificationHookInput, PostToolUseHookInput, PreToolUseHookInput, StopHookInput, SubagentStopHookInput } from '@/resource/HookInput';
-import { PreToolUseHookOutput, PostToolUseHookOutput, NotificationHookOutput, SubagentStopHookOutput, StopHookOutput, HookOutput } from '@/resource/HookOutput';
+import { type HookHandler } from '@/resource/HookHandler';
+import { isKnownHookInput } from '@/resource/HookInput';
+import { HookOutput } from '@/resource/HookOutput';
 import { LoggerService } from '@/service/LoggerService';
-
-export type HookHandler = {
-  preToolUseHandler?: (input: PreToolUseHookInput) => Promise<PreToolUseHookOutput>;
-  postToolUseHandler?: (input: PostToolUseHookInput) => Promise<PostToolUseHookOutput>;
-  notificationHandler?: (input: NotificationHookInput) => Promise<NotificationHookOutput>;
-  subagentStopHandler?: (input: SubagentStopHookInput) => Promise<SubagentStopHookOutput>;
-  stopHandler?: (input: StopHookInput) => Promise<StopHookOutput>;
-};
 
 @injectable()
 export class HookHandlerService {
@@ -49,6 +42,10 @@ export class HookHandlerService {
       output = await handler.subagentStopHandler(input);
     } else if (handler.stopHandler !== undefined && isKnownHookInput(input, 'Stop')) {
       output = await handler.stopHandler(input);
+    } else if (handler.userPromptSubmitHandler !== undefined && isKnownHookInput(input, 'UserPromptSubmit')) {
+      output = await handler.userPromptSubmitHandler(input);
+    } else if (handler.preCompactHandler !== undefined && isKnownHookInput(input, 'PreCompact')) {
+      output = await handler.preCompactHandler(input);
     } else {
       this.loggerService.error(`No valid handler found for hook input: ${inputRaw}`);
       return {

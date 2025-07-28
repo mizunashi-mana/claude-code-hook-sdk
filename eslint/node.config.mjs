@@ -10,12 +10,8 @@ export default defineConfig([
       'n/no-new-require': 'error',
       'n/no-path-concat': 'error',
       'n/process-exit-as-throw': 'error',
-    },
-  },
-  {
-    files: ['**/*.{ts,tsx}'],
-    rules: {
-      // Use eslint-plugin-import-x for TypeScript imports
+
+      // Use eslint-plugin-import-x
       'n/no-missing-import': 'off',
       'n/no-unpublished-import': 'off',
     },

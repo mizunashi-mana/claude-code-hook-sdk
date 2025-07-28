@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { parseHookInput } from '@/api/parseHookInput';
-import { HookHandlerService, type HookHandler } from '@/service/HookHandlerService';
+import { type HookHandler } from '@/resource/HookHandler';
+import { HookHandlerService } from '@/service/HookHandlerService';
 import { ConsoleLoggerService } from '@/service/LoggerService';
 
 vi.mock('@/api/parseHookInput');

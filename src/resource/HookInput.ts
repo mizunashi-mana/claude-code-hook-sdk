@@ -72,15 +72,37 @@ export const SubagentStopHookInputSchema = BaseHookInputSchema.extend({
   stop_hook_active: z.boolean(),
 });
 
+export interface UserPromptSubmitHookInput extends BaseHookInput {
+  hook_event_name: 'UserPromptSubmit';
+  prompt: string;
+}
+
+export const UserPromptSubmitHookInputSchema = BaseHookInputSchema.extend({
+  hook_event_name: z.literal('UserPromptSubmit'),
+  prompt: z.string(),
+});
+
+export interface PreCompactHookInput extends BaseHookInput {
+  hook_event_name: 'PreCompact';
+  trigger: string;
+  custom_instructions: string;
+}
+
+export const PreCompactHookInputSchema = BaseHookInputSchema.extend({
+  hook_event_name: z.literal('PreCompact'),
+  trigger: z.string(),
+  custom_instructions: z.string(),
+});
+
 export const HookInputSchema = z.discriminatedUnion('hook_event_name', [
   PreToolUseHookInputSchema,
   PostToolUseHookInputSchema,
   NotificationHookInputSchema,
   StopHookInputSchema,
   SubagentStopHookInputSchema,
+  UserPromptSubmitHookInputSchema,
+  PreCompactHookInputSchema,
 ]);
-
-export type HookInput = PostToolUseHookInput | PreToolUseHookInput | NotificationHookInput | StopHookInput | SubagentStopHookInput;
 
 export type HookInputMap = {
   PreToolUse: PreToolUseHookInput;
@@ -88,7 +110,11 @@ export type HookInputMap = {
   Notification: NotificationHookInput;
   Stop: StopHookInput;
   SubagentStop: SubagentStopHookInput;
+  UserPromptSubmit: UserPromptSubmitHookInput;
+  PreCompact: PreCompactHookInput;
 };
+
+export type HookInput = HookInputMap[keyof HookInputMap];
 
 export function isKnownHookInput<HookEventName extends keyof HookInputMap>(input: HookInput, hookEventName: HookEventName): input is HookInputMap[HookEventName] {
   return input.hook_event_name === hookEventName;

@@ -1,5 +1,3 @@
-export const BLOCKING_EXIT_CODE = 2;
-
 export interface BaseHookOutput {
   continue?: boolean;
   stopReason?: string;
@@ -30,9 +28,24 @@ export interface SubagentStopHookOutput extends BaseHookOutput {
   reason?: string;
 }
 
+export interface UserPromptSubmitHookOutput extends BaseHookOutput {
+  decision?: 'block' | undefined;
+  reason?: string;
+  hookSpecificOutput?: {
+    hookEventName: string;
+    additionalContext: string;
+  };
+}
+
+export interface PreCompactHookOutput extends BaseHookOutput {
+  decision?: undefined;
+}
+
 export type HookOutput
   = | PreToolUseHookOutput
     | PostToolUseHookOutput
     | NotificationHookOutput
     | StopHookOutput
-    | SubagentStopHookOutput;
+    | SubagentStopHookOutput
+    | UserPromptSubmitHookOutput
+    | PreCompactHookOutput;
