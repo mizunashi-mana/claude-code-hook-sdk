@@ -1,0 +1,18 @@
+# Devenv
+.devenv*
+devenv.local.nix
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
+
+# npm
+node_modules/
+
+# ESLint
+.eslintcache
+
+# vitest
+/coverage/

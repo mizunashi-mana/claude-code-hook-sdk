@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "devenv": {
+      "command": "devenv",
+      "args": [
+        "mcp"
+      ]
+    },
+    "eslint": {
+      "command": "npx",
+      "args": [
+        "@eslint/mcp"
+      ]
+    }
+  }
+}
