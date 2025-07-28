@@ -7,7 +7,7 @@ A TypeScript SDK to write claude-code hooks easily with type safety, dependency 
 ### Installation
 
 ```bash
-npm install -D @mizunashi-mana/claude-code-hook-sdk tsx
+npm install -D @mizunashi_mana/claude-code-hook-sdk tsx
 ```
 
 ### Basic Usage
@@ -15,7 +15,7 @@ npm install -D @mizunashi-mana/claude-code-hook-sdk tsx
 Create a simple hook that logs all tool usage:
 
 ```typescript
-import { runHook } from '@mizunashi-mana/claude-code-hook-sdk';
+import { runHook } from '@mizunashi_mana/claude-code-hook-sdk';
 
 void runHook({
   preToolUseHandler: async (input) => {

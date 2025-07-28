@@ -6,7 +6,7 @@
     "reject-jest-and-prefer-vitest": "tsx reject-jest-and-prefer-vitest.ts"
   },
   "dependencies": {
-    "@mizunashi-mana/claude-code-hook-sdk": "^1.0.0",
+    "@mizunashi_mana/claude-code-hook-sdk": "^1.0.0",
     "tsx": "^4.20.3"
   },
   "devDependencies": {

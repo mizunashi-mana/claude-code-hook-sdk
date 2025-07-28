@@ -1,6 +1,6 @@
 import { execFile } from 'node:child_process';
 import * as fs from 'node:fs/promises';
-import { runHook } from '@mizunashi-mana/claude-code-hook-sdk';
+import { runHook } from '@mizunashi_mana/claude-code-hook-sdk';
 
 void runHook({
   async postToolUseHandler(input) {
