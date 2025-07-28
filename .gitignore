@@ -13,6 +13,7 @@ devenv.local.nix
 
 # npm
 node_modules/
+*.tgz
 
 # ESLint
 .eslintcache

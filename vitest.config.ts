@@ -14,6 +14,7 @@ export default defineConfig({
         'dist/',
         'test/',
         'eslint/',
+        'example/',
         '**/*.d.ts',
         '*.*',
       ],

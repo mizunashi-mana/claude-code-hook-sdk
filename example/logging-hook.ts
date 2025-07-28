@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { runHook } from '@mizunashi-mana/claude-code-hook-sdk';
+import { runHook } from '@mizunashi_mana/claude-code-hook-sdk';
 
 const LOG_FILE = path.resolve(__dirname, '../claude-hook.log');
 

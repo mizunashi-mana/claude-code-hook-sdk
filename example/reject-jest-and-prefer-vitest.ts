@@ -1,4 +1,4 @@
-import { runHook } from '@mizunashi-mana/claude-code-hook-sdk';
+import { runHook } from '@mizunashi_mana/claude-code-hook-sdk';
 
 void runHook({
   async preToolUseHandler(input) {
