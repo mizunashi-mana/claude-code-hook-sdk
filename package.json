@@ -15,7 +15,7 @@
     "postinstall": "npm run build",
     "lint:eslint": "git ls-files -- '*.js' '*.jsx' '*.mjs' '*.ts' '*.tsx' | xargs eslint --cache --fix",
     "lint:tsc": "tsc --noEmit",
-    "test": "vitest",
+    "test:vitest": "vitest --run --coverage",
     "build": "tsc --declaration && tsc-alias"
   },
   "dependencies": {

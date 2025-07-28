@@ -15,4 +15,4 @@ jobs:
       - uses: ./.github/actions/setup-devenv
 
       - name: Run tests
-        run: devenv shell npm test
+        run: devenv shell npm run test:vitest
