@@ -195,7 +195,7 @@ export default defineConfig([
     },
   },
   {
-    files: ['**/*.stories.{ts,tsx}', 'example/**/*'],
+    files: ['**/*.stories.{ts,tsx}', '{example,script}/**/*'],
     rules: {
       'no-console': 'off',
       'no-alert': 'off',

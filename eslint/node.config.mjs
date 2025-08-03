@@ -16,4 +16,11 @@ export default defineConfig([
       'n/no-unpublished-import': 'off',
     },
   },
+  {
+    files: ['script/**/*'],
+    rules: {
+      // allowed in CLI scripts
+      'n/no-process-exit': 'off',
+    },
+  },
 ]);

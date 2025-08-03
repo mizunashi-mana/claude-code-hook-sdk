@@ -36,7 +36,7 @@ describe('HookHandlerService', () => {
         exitCode: 'failure',
       });
       expect(mockLoggerService.error).toHaveBeenCalledWith(
-        'Failed to parse hook input: Invalid input',
+        'Invalid input',
       );
     });
 
