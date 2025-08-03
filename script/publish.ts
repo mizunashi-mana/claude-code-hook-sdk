@@ -20,6 +20,15 @@ async function gitTag(version: string, dryRun: boolean): Promise<void> {
 }
 
 async function checkGitTagExists(version: string): Promise<boolean> {
+  // First, fetch the specific tag from remote
+  try {
+    console.log(`→ Fetching tag v${version} from remote...`);
+    await execFileAsync('git', ['fetch', 'origin', `tag`, `v${version}`]);
+  } catch {
+    // Tag doesn't exist on remote, which is fine
+  }
+
+  // Then check if tag exists locally (which now includes remote tags we just fetched)
   try {
     await execFileAsync('git', ['rev-parse', `v${version}`]);
     return true;
