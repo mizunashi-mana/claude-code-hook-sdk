@@ -22,7 +22,7 @@ export class HookHandlerService {
 
     const parseResult = parseHookInput(inputRaw);
     if (parseResult.type === 'error') {
-      this.loggerService.error(`Failed to parse hook input: ${parseResult.message}`);
+      this.loggerService.error(parseResult.message);
       return {
         output: undefined,
         exitCode: 'failure',

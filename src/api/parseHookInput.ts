@@ -27,7 +27,7 @@ export function parseHookInput(input: string): ParseResult {
     if (error instanceof z.ZodError) {
       return {
         type: 'error',
-        message: `Invalid JSON schema: ${error.errors[0]?.message}`,
+        message: `Invalid JSON schema: ${error.message}`,
       };
     }
 

@@ -18,7 +18,7 @@ export default defineConfig([
     },
   },
   {
-    files: ['{src,test}/**/*.{ts,tsx}', '.*/**/*.{ts,tsx}', '*.ts'],
+    files: ['{src,test,script}/**/*.{ts,tsx}', '.*/**/*.{ts,tsx}', '*.ts'],
     languageOptions: {
       parserOptions: {
         projectService: true,
