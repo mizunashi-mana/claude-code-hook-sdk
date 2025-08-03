@@ -1,5 +1,10 @@
 # A 3rd-party SDK for claude-code Hooks
 
+[![CI](https://github.com/mizunashi-mana/claude-code-hook-sdk/actions/workflows/test.yml/badge.svg)](https://github.com/mizunashi-mana/claude-code-hook-sdk/actions/workflows/test.yml)
+[![npm version](https://badge.fury.io/js/@mizunashi_mana%2Fclaude-code-hook-sdk.svg)](https://www.npmjs.com/package/@mizunashi_mana/claude-code-hook-sdk)
+[![npm downloads](https://img.shields.io/npm/dm/@mizunashi_mana/claude-code-hook-sdk.svg)](https://www.npmjs.com/package/@mizunashi_mana/claude-code-hook-sdk)
+[![License](https://img.shields.io/npm/l/@mizunashi_mana/claude-code-hook-sdk.svg)](https://github.com/mizunashi-mana/claude-code-hook-sdk/blob/main/LICENSE)
+
 A TypeScript SDK to write claude-code hooks easily with type safety, dependency injection, and comprehensive testing support.
 
 ## Quick Start
