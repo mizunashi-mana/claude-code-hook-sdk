@@ -1,6 +1,6 @@
 {
   "name": "@mizunashi_mana/claude-code-hook-sdk",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "A TypeScript SDK to write claude-code hooks easily with type safety, dependency injection, and comprehensive testing support.",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
