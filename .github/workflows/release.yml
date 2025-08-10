@@ -45,11 +45,11 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Run tests
-        run: devenv shell npm test
-
       - name: Build package
         run: devenv shell npm run build
+
+      - name: Run tests
+        run: devenv shell npm test
 
       - name: Dry run check
         if: ${{ github.event.inputs.dry_run == 'true' }}
