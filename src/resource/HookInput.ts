@@ -25,7 +25,7 @@ export interface PreToolUseHookInput extends BaseHookInput {
 export const PreToolUseHookInputSchema = BaseHookInputSchema.extend({
   hook_event_name: z.literal('PreToolUse'),
   tool_name: z.string(),
-  tool_input: z.record(z.unknown()),
+  tool_input: z.record(z.string(), z.unknown()),
 });
 
 export interface PostToolUseHookInput extends BaseHookInput {
@@ -38,8 +38,8 @@ export interface PostToolUseHookInput extends BaseHookInput {
 export const PostToolUseHookInputSchema = BaseHookInputSchema.extend({
   hook_event_name: z.literal('PostToolUse'),
   tool_name: z.string(),
-  tool_input: z.record(z.unknown()),
-  tool_response: z.record(z.unknown()),
+  tool_input: z.record(z.string(), z.unknown()),
+  tool_response: z.record(z.string(), z.unknown()),
 });
 
 export interface NotificationHookInput extends BaseHookInput {

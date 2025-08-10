@@ -3,7 +3,6 @@
 [![CI](https://github.com/mizunashi-mana/claude-code-hook-sdk/actions/workflows/test.yml/badge.svg)](https://github.com/mizunashi-mana/claude-code-hook-sdk/actions/workflows/test.yml)
 [![npm version](https://badge.fury.io/js/@mizunashi_mana%2Fclaude-code-hook-sdk.svg)](https://www.npmjs.com/package/@mizunashi_mana/claude-code-hook-sdk)
 [![npm downloads](https://img.shields.io/npm/dm/@mizunashi_mana/claude-code-hook-sdk.svg)](https://www.npmjs.com/package/@mizunashi_mana/claude-code-hook-sdk)
-[![License](https://img.shields.io/npm/l/@mizunashi_mana/claude-code-hook-sdk.svg)](https://github.com/mizunashi-mana/claude-code-hook-sdk/blob/main/LICENSE)
 
 A TypeScript SDK to write claude-code hooks easily with type safety, dependency injection, and comprehensive testing support.
 
@@ -70,6 +69,6 @@ This repository is offered under your choice of the following licenses:
 - **Mozilla Public License, Version 2.0**  
   You may use, modify, and distribute this repository under the terms of the [Mozilla Public License 2.0](https://www.mozilla.org/MPL/2.0/).
 
-**Note:** By contributing to or using this repository, you agree to comply with the full text of the license you select.
+Note: By contributing to or using this repository, you agree to comply with the full text of the license you select.
 
 See [LICENSE](./LICENSE) also.
