@@ -12,6 +12,7 @@
 
   # https://devenv.sh/languages/
   languages.javascript = {
+    package = pkgs.nodejs-slim_24;
     enable = true;
     npm = {
       enable = true;
