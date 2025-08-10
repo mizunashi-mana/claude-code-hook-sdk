@@ -12,6 +12,7 @@
 
   # https://devenv.sh/languages/
   languages.javascript = {
+    package = pkgs.nodejs-slim_24;
     enable = true;
     npm = {
       enable = true;
@@ -20,7 +21,7 @@
 
   # https://devenv.sh/scripts/
   scripts.install-all = {
-    exec = "npm install";
+    exec = "npm install && npm run build";
   };
   scripts.lint-all = {
     exec = "pre-commit run --all-files && npm run lint:tsc";

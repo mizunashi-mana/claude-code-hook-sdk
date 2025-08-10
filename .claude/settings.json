@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(lint-all)",
-      "Bash(npm run lint:*)"
+      "Bash(npm run lint:*)",
+      "Bash(npm run build:*)"
     ]
   },
   "enableAllProjectMcpServers": true,
