@@ -1,10 +1,10 @@
 import { inject, injectable } from 'inversify';
-import { parseHookInput } from '@/api/parseHookInput';
-import { Tags } from '@/container/Tags';
-import { type HookHandler } from '@/resource/HookHandler';
-import { isKnownHookInput } from '@/resource/HookInput';
-import { HookOutput } from '@/resource/HookOutput';
-import { LoggerService } from '@/service/LoggerService';
+import { parseHookInput } from '@/api/parseHookInput.js';
+import { Tags } from '@/container/Tags.js';
+import { type HookHandler } from '@/resource/HookHandler.js';
+import { isKnownHookInput } from '@/resource/HookInput.js';
+import { HookOutput } from '@/resource/HookOutput.js';
+import { LoggerService } from '@/service/LoggerService.js';
 
 @injectable()
 export class HookHandlerService {

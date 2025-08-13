@@ -1,6 +1,6 @@
 {
   "name": "@mizunashi_mana/claude-code-hook-sdk",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "A TypeScript SDK to write claude-code hooks easily with type safety, dependency injection, and comprehensive testing support.",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
@@ -47,7 +47,8 @@
     "lint:eslint": "git ls-files -- '*.js' '*.jsx' '*.mjs' '*.ts' '*.tsx' | xargs eslint --cache --fix",
     "lint:tsc": "tsc --noEmit",
     "test": "vitest --run --coverage",
-    "build": "tsc --declaration && tsc-alias"
+    "build": "tsc && tsc-alias",
+    "build:dev": "tsc --sourceMap && tsc-alias"
   },
   "dependencies": {
     "inversify": "^7.6.1",

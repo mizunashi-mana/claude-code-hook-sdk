@@ -1,5 +1,5 @@
 import * as z from 'zod';
-import { type HookInput, HookInputSchema } from '@/resource/HookInput';
+import { type HookInput, HookInputSchema } from '@/resource/HookInput.js';
 
 export type ParseResult = {
   type: 'success';

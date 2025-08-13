@@ -1,11 +1,11 @@
-import * as HookInput from '@/resource/HookInput';
-import * as HookInputToolResponse from '@/resource/HookInputToolResponse';
-import * as HookOutput from '@/resource/HookOutput';
+import * as HookInput from '@/resource/HookInput.js';
+import * as HookInputToolResponse from '@/resource/HookInputToolResponse.js';
+import * as HookOutput from '@/resource/HookOutput.js';
 
-export { runHook } from '@/api/runHook';
-export { runHookCaller } from '@/api/runHookCaller';
-export { parseHookInput } from '@/api/parseHookInput';
-export { execFileAsync } from '@/api/execFileAsync';
+export { runHook } from '@/api/runHook.js';
+export { runHookCaller } from '@/api/runHookCaller.js';
+export { parseHookInput } from '@/api/parseHookInput.js';
+export { execFileAsync } from '@/api/execFileAsync.js';
 
-export type { HookHandler } from '@/resource/HookHandler';
+export type { HookHandler } from '@/resource/HookHandler.js';
 export { HookInput, HookOutput, HookInputToolResponse };

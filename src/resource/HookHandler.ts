@@ -1,5 +1,5 @@
-import { type PreCompactHookInput, type UserPromptSubmitHookInput, type NotificationHookInput, type PostToolUseHookInput, type PreToolUseHookInput, type StopHookInput, type SubagentStopHookInput } from '@/resource/HookInput';
-import { type PreToolUseHookOutput, type PostToolUseHookOutput, type NotificationHookOutput, type SubagentStopHookOutput, type StopHookOutput, type PreCompactHookOutput, type UserPromptSubmitHookOutput } from '@/resource/HookOutput';
+import { type PreCompactHookInput, type UserPromptSubmitHookInput, type NotificationHookInput, type PostToolUseHookInput, type PreToolUseHookInput, type StopHookInput, type SubagentStopHookInput } from '@/resource/HookInput.js';
+import { type PreToolUseHookOutput, type PostToolUseHookOutput, type NotificationHookOutput, type SubagentStopHookOutput, type StopHookOutput, type PreCompactHookOutput, type UserPromptSubmitHookOutput } from '@/resource/HookOutput.js';
 
 export type HookHandler = {
   preToolUseHandler?: (input: PreToolUseHookInput) => Promise<PreToolUseHookOutput>;
