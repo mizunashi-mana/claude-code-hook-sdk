@@ -1,5 +1,5 @@
 import * as z from 'zod';
-import { type ToolResponse } from '@/resource/HookInput';
+import { type ToolResponse } from '@/resource/HookInput.js';
 
 export type StructuredPatch = Array<{
   oldStart: number;

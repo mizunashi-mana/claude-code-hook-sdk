@@ -4,8 +4,8 @@
     "lib": [
       "esnext"
     ],
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "esModuleInterop": true,
     "baseUrl": "./",
     "outDir": "dist",
@@ -17,8 +17,8 @@
         "test/*"
       ]
     },
-    "sourceMap": true,
     "strict": true,
+    "declaration": true,
     "noUncheckedIndexedAccess": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true

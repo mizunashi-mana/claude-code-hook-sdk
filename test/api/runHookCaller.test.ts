@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { runHookCaller } from '@/api/runHookCaller';
-import { type HookHandler } from '@/resource/HookHandler';
+import { runHookCaller } from '@/api/runHookCaller.js';
+import { type HookHandler } from '@/resource/HookHandler.js';
 
 describe('runHookCaller', () => {
   it('should handle valid PreToolUse JSON input successfully', async () => {

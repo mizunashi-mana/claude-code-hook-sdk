@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { parseHookInput } from '@/api/parseHookInput';
+import { parseHookInput } from '@/api/parseHookInput.js';
 
 describe('parseHookInput', () => {
   it('should parse valid PreToolUse hook input', () => {

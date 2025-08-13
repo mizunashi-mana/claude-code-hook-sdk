@@ -1,10 +1,10 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { parseHookInput } from '@/api/parseHookInput';
-import { type HookHandler } from '@/resource/HookHandler';
-import { HookHandlerService } from '@/service/HookHandlerService';
-import { ConsoleLoggerService } from '@/service/LoggerService';
+import { parseHookInput } from '@/api/parseHookInput.js';
+import { type HookHandler } from '@/resource/HookHandler.js';
+import { HookHandlerService } from '@/service/HookHandlerService.js';
+import { ConsoleLoggerService } from '@/service/LoggerService.js';
 
-vi.mock('@/api/parseHookInput');
+vi.mock('@/api/parseHookInput.js');
 
 const mockParseHookInput = vi.mocked(parseHookInput);
 

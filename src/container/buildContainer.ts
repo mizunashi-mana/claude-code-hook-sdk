@@ -1,7 +1,7 @@
 import { Container } from 'inversify';
-import { Tags } from '@/container/Tags';
-import { HookHandlerService } from '@/service/HookHandlerService';
-import { type LoggerService, ConsoleLoggerService } from '@/service/LoggerService';
+import { Tags } from '@/container/Tags.js';
+import { HookHandlerService } from '@/service/HookHandlerService.js';
+import { type LoggerService, ConsoleLoggerService } from '@/service/LoggerService.js';
 
 export function buildContainer(): Container {
   const container = new Container();
