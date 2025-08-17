@@ -24,6 +24,5 @@ export async function runHook(handler: HookHandler): Promise<void> {
     exitCode = 0;
   }
 
-  // eslint-disable-next-line n/no-process-exit -- Allowed in CLI tools
   process.exit(exitCode);
 }

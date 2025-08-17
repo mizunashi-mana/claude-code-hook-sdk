@@ -23,3 +23,6 @@ jobs:
 
       - name: Run tsc
         run: devenv shell npm run lint:tsc
+
+      - name: Run tsc
+        run: devenv shell npm -C example/ run lint:tsc
