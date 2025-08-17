@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { execFileAsync } from '@/api/util/execFileAsync.js';
+import { assertInstanceOf } from '@~test/util/assert.js';
 
 describe('execFileAsync', () => {
   it('should execute a command successfully and return stdout', async () => {
@@ -73,10 +74,8 @@ describe('execFileAsync', () => {
       await execFileAsync('sh', ['-c', 'exit 42']);
       expect.fail('Should have thrown an error');
     } catch (error) {
-      expect(error).toBeInstanceOf(Error);
-      if (error instanceof Error) {
-        expect(error.message).toContain('42');
-      }
+      assertInstanceOf(error, Error);
+      expect(error.message).toContain('42');
     }
   });
 

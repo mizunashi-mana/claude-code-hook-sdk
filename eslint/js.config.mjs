@@ -204,6 +204,12 @@ export default defineConfig([
   {
     files: ['**/*.test.ts'],
     rules: {
+      'max-lines': [
+        'error',
+        {
+          max: 1000,
+        },
+      ],
       'max-nested-callbacks': [
         'error',
         { max: 4 },
