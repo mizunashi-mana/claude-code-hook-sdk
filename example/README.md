@@ -7,8 +7,8 @@ This directory contains example hooks for **@mizunashi_mana/claude-code-hook-sdk
 | Hook Type | Example | Use Case |
 |-----------|---------|----------|
 | **Monitoring** | `logging-hook.ts` | Track what Claude does |
-| **Transformation** | `format-on-post-tool.ts` | Modify Claude's output |
-| **Validation** | `reject-jest-and-prefer-vitest.ts` | Prevent unwanted actions |
+| **Transformation** | `format-on-post-tool.ts` | Auto-format modified files |
+| **Validation** | `reject-jest-and-prefer-vitest.ts` | Block specific tool usage |
 
 ## 📚 What are Hooks?
 
@@ -38,31 +38,45 @@ A simple hook that logs all Claude Code activities to help you understand what a
 ---
 
 ### 2. `format-on-post-tool.ts` ✨
-**Type:** Post-processing Hook
+**Type:** Post-processing Hook  
+**Uses:** `postToolUpdateFileHook` utility
 
 Automatically formats code after Claude makes changes, ensuring consistent code style.
 
 **What it does:**
-- Runs after file modifications
-- Applies your project's formatting rules
-- Maintains code consistency
+- Runs after file modifications (Write, Edit, MultiEdit tools)
+- Checks if files need to be staged in git
+- Executes pre-commit hooks on modified files
+- Uses the `postToolUpdateFileHook` helper for structured file change handling
+
+**Key features:**
+- Access to file path, added lines, and deleted lines
+- Skips formatting for import-only changes
+- Automatically stages untracked files for git
 
 **Perfect for:**
 - Teams with strict formatting standards
-- Projects using tools like Prettier, ESLint, etc.
+- Projects using pre-commit hooks
 - Maintaining clean git diffs
 
 ---
 
 ### 3. `reject-jest-and-prefer-vitest.ts` 🚫
-**Type:** Validation Hook
+**Type:** Validation Hook  
+**Uses:** `preToolRejectHook` utility
 
 Prevents the use of Jest testing framework and suggests using Vitest instead.
 
 **What it does:**
-- Intercepts file writes and edits
-- Checks for Jest-related imports or configurations
-- Blocks the action and suggests Vitest alternatives
+- Intercepts Bash commands before execution
+- Uses regex patterns to detect jest usage
+- Blocks the command with a helpful message
+- Leverages the `preToolRejectHook` helper for easy configuration
+
+**Configuration options:**
+- **regex patterns**: Match commands by regular expression
+- **function handlers**: Custom logic for complex matching
+- **custom messages**: Provide helpful alternatives
 
 **Perfect for:**
 - Enforcing technology choices
@@ -79,11 +93,11 @@ Prevents the use of Jest testing framework and suggests using Vitest instead.
      "hooks": {
        "PreToolUse": [
          {
-           "matcher": "Bash",
+           "matcher": "*",
            "hooks": [
              {
                "type": "command",
-               "command": "npm run reject-jest-and-prefer-vitest"
+               "command": "npx tsx reject-jest-and-prefer-vitest.ts"
              }
            ]
          }
@@ -94,7 +108,7 @@ Prevents the use of Jest testing framework and suggests using Vitest instead.
            "hooks": [
              {
                "type": "command",
-               "command": "npm run format-on-post-tool"
+               "command": "npx tsx format-on-post-tool.ts"
              }
            ]
          }
@@ -105,6 +119,28 @@ Prevents the use of Jest testing framework and suggests using Vitest instead.
 4. **Customize** the hook for your specific requirements
 
 💡 **See a real example:** Check out this project's [.claude/settings.json](../.claude/settings.json) to see how we use these hooks!
+
+## 🛠️ Advanced Hook Utilities
+
+This SDK provides powerful utilities to simplify hook creation:
+
+### `preToolRejectHook`
+A utility for creating hooks that validate and potentially block tool usage:
+- Configure regex patterns or custom functions
+- Provide helpful alternative suggestions
+- Particularly useful for Bash command validation
+
+### `postToolUpdateFileHook`
+A utility for processing file changes after modifications:
+- Access structured information about file changes
+- Get lists of added and deleted lines
+- Perfect for running formatters, linters, or other processors
+
+### `execFileAsync`
+A promisified version of Node.js's `execFile`:
+- Run external commands safely
+- Capture stdout and stderr
+- Use in combination with other utilities
 
 ## 📖 Learn More
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { execFileAsync } from '@/api/execFileAsync.js';
+import { execFileAsync } from '@/api/util/execFileAsync.js';
 
 describe('execFileAsync', () => {
   it('should execute a command successfully and return stdout', async () => {

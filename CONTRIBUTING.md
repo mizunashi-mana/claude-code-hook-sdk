@@ -34,6 +34,8 @@ Thank you for your interest in contributing to the claude-code-hook-sdk! This gu
 
 - `src/` - Main source code
   - `api/` - Core API functions
+    - `advanced/` - Advanced hook utilities
+    - `util/` - Utility functions
   - `resource/` - Resource handlers and interfaces
   - `service/` - Service layer with dependency injection
 - `test/` - Test files

@@ -17,7 +17,7 @@ export default defineConfig([
     },
   },
   {
-    files: ['script/**/*'],
+    files: ['src/api/**/*'],
     rules: {
       // allowed in CLI scripts
       'n/no-process-exit': 'off',
